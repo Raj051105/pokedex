@@ -8,40 +8,74 @@
 </head>
 
 <body>
-<div class="container">
-    <!-- Search Box -->
-    <div class="search-area">
-        <input type="text" class="search" placeholder="   Search..." label="Search" >
-        <div class="for-search-btn">
-            <button class="btn" type="button" id="searchButton">Search</button>
-        </div>
-    </div>
-    <!-- Card Layout -->
-    <div class="row">
-        <div class="col-1">
-            <div class="card-1">
-                <img class="img-1" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/802.png" alt="Marshadow">
-                <div class="card-1-body">
-                    <h5 class="card-1-title">Marshadow</h5>
-                    <p class="card-1-text">Gloomdweller</p>
-                </div>
+    <div class="container">
+        <!-- Search Box -->
+        <div class="search-area">
+            <input type="text" class="search" placeholder="   Search..." label="Search" id="searchInput">
+            <div class="for-search-btn">
+                <button class="btn" type="button" id="searchButton">Search</button>
             </div>
         </div>
-        <div class="col-2">
-            <div class="card-2">
-                <img class="img-2" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/662.png" alt="Fletchinder">
-                <div class="card-2-body">
-                    <h5 class="card-2-title">Fletchinder</h5>
-                    <p class="card-2-text">Ember</p>
+        <!-- Card Layout -->
+        <div class="row" id="pokemonCards">
+            <div class="col-1">
+                <div class="card-1">
+                    <img class="img-1" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/802.png"
+                        alt="Marshadow">
+                    <div class="card-1-body">
+                        <h5 class="card-1-title">Marshadow</h5>
+                        <p class="card-1-text">Gloomdweller</p>
+                    </div>
                 </div>
             </div>
+            <div class="col-2">
+                <div class="card-2">
+                    <img class="img-2" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/662.png"
+                        alt="Fletchinder">
+                    <div class="card-2-body">
+                        <h5 class="card-2-title">Fletchinder</h5>
+                        <p class="card-2-text">Ember</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
         </div>
-        <div></div>
-        <!-- Add more cards as needed -->
+        <div id="notFoundMessage" style="display: none; font-weight: bold; font-size: 1.2em;"><b>Sorry, not found</b></div>
+
     </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function () {
+            var searchInput = document.getElementById('searchInput').value.toLowerCase();
+            var pokemonCards = document.getElementById('pokemonCards');
+            var notFoundMessage = document.getElementById('notFoundMessage');
+
+            // Loop through each card and check if the Pokemon name matches the search input
+            var found = false;
+            for (var i = 0; i < pokemonCards.children.length; i++) {
+                var card = pokemonCards.children[i];
+                var pokemonName = card.querySelector('.card-' + (i + 1) + '-title').innerText.toLowerCase();
+
+                if (pokemonName.includes(searchInput)) {
+                    card.style.display = 'block';
+                    found = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+
+            // Show or hide the "Sorry, not found" message based on the search result
+            if (found) {
+                notFoundMessage.style.display = 'none';
+            } else {
+                notFoundMessage.style.display = 'block';
+            }
+        });
+    </script>
 </body>
+
 </html>
