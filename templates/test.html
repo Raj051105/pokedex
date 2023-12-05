@@ -1,13 +1,46 @@
-<html>
-    <head>
-        <title>Welcome</title>
-        <body>
-            <img src="https://shorturl.at/tNWZ5">
+<!DOCTYPE html>
+<html lang="en">
 
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/133.png">
+<head>
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}>
+</head>
 
-            <h1>Hello there</h1>
-
-        </body>
-    </head>
+<body>
+<div class="container">
+    <!-- Search Box -->
+    <div class="search-area">
+        <input type="text" class="search" placeholder="   Search..." label="Search" >
+        <div class="for-search-btn">
+            <button class="btn" type="button" id="searchButton">Search</button>
+        </div>
+    </div>
+    <!-- Card Layout -->
+    <div class="row">
+        <div class="col-1">
+            <div class="card-1">
+                <img class="img-1" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/802.png" alt="Marshadow">
+                <div class="card-1-body">
+                    <h5 class="card-1-title">Marshadow</h5>
+                    <p class="card-1-text">Gloomdweller</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card-2">
+                <img class="img-2" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/662.png" alt="Fletchinder">
+                <div class="card-2-body">
+                    <h5 class="card-2-title">Fletchinder</h5>
+                    <p class="card-2-text">Ember</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
