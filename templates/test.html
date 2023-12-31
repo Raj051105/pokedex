@@ -18,71 +18,45 @@
         </div>
         <!-- Card Layout -->
         <div class="row" id="pokemonCards">
-            <div class="col-4">
-                <div class="card-4">
-                    <img class="img-4" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
-                        alt="Bulbasaur">
-                    <div class="card-4-body">
-                        <h5 class="card-4-title">Bulbasaur</h5>
-                        <p class="card-4-text">Seed</p>
+            <div class="col-1">
+                <div class="card">
+                    <div class="content">
+                        <img class="img-1" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Bulbasaur">
+                        <div class="card-1-body">
+                            <h5 class="card-1-title">Bulbasaur</h5>
+                            <p class="card-1-text">Seed</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-5">
-                <div class="card-5">
-                    <img class="img-5" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png"
+
+            <div class="col-2">
+                <div class="card">
+                    <div class="content">
+                        <img class="img-2" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png"
                         alt="Ivysaur">
-                    <div class="card-5-body">
-                        <h5 class="card-5-title">Ivysaur</h5>
-                        <p class="card-5-text">Seed</p>
+                        <div class="card-2-body">
+                            <h5 class="card-2-title">Ivysaur</h5>
+                            <p class="card-2-text">Seed</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
-            <div class="col-6">
-                <div class="card-6">
-                    <img class="img-6" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png"
+            <div class="col-3">
+                <div class="card">
+                    <div class="content">
+                        <img class="img-3" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png"
                         alt="Venusaur">
-                    <div class="card-6-body">
-                        <h5 class="card-6-title">Venusaur</h5>
-                        <p class="card-6-text">Seed</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" id="pokemonCards">
-            <div class="col-4">
-                <div class="card-4">
-                    <img class="img-4" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png"
-                        alt="Charmander">
-                    <div class="card-4-body">
-                        <h5 class="card-4-title">Charmander</h5>
-                        <p class="card-4-text">Lizard</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-5">
-                <div class="card-5">
-                    <img class="img-5" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png"
-                        alt="Charmeleon ">
-                    <div class="card-5-body">
-                        <h5 class="card-5-title">Charmeleon </h5>
-                        <p class="card-5-text">Flame</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card-6">
-                    <img class="img-6" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png"
-                        alt="Charizard">
-                    <div class="card-6-body">
-                        <h5 class="card-6-title">Charizard</h5>
-                        <p class="card-6-text">Flame</p>
+                        <div class="card-3-body">
+                            <h5 class="card-3-title">Venusaur</h5>
+                            <p class="card-3-text">Seed</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
             <!-- Add more cards as needed -->
-    
         <div id="notFoundMessage" style="display: none; font-weight: bold; font-size: 1.2em;"><b>Sorry, not found</b></div>
 
     </div>
@@ -90,6 +64,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src=""></script>
 
     <script>
         document.getElementById('searchButton').addEventListener('click', function () {
@@ -119,5 +94,11 @@
             }
         });
     </script>
-</body>
+    <script src="{{ url_for('static', filename='js/vanilla-tilt.js') }}"></script>
+    <script>
+        	VanillaTilt.init(document.querySelectorAll(".card"), {
+		max: 25,
+		speed: 400
+	});
+    </script>
 </html>
