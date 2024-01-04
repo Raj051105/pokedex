@@ -88,14 +88,14 @@ body
 {
     padding: 20px;
     text-align: center;
-    transform: translateY(100px);
+/*  transform: translateY(100px); */
     opacity: 0;
     transition: 0.5s;
 }
 
 .container .card:hover .card-body
 {
-    transform: translateY(0px);
+    /*transform: translateY(100px);*/
     align-items: center;
     opacity: 1;
 }
