@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Your Page Title</title>
+    <title>Pokemon World</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/csindex.css') }}">
 </head>
+
 <body>
-    <p> <a href="{{ url_for('second') }}">This is the main content of your webpage.</a> </p>
+    <video id="myVideo" autoplay muted loop>
+        <source src="{{ url_for('static', filename='videos/pokemon.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('myVideo').classList.add('blurred');
+        }, 5000); // Blur the video after 5 seconds
+    </script>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="{{ url_for('second') }}">Pokedex</a>
+        <a href="#">Trainers</a>
+        <a href="#">Gyms</a>
+        <a href="#">About</a>
+    </nav>
+
+    <footer>
+        <p>POKEMON WORLD</p>
+    </footer>
+
 </body>
 </html>
