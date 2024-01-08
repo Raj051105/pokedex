@@ -8,14 +8,18 @@
 </head>
 
 <body>
+
+    <nav>
+            <a href="{{url_for('index') }}">Home</a>
+            <a href="{{ url_for('second') }}">Pokedex</a>
+            <a href="#">Trainers</a>
+            <a href="#">Gyms</a>
+            <a href="#">About</a>
+    </nav>
+
     <div class="container">
         <!-- Search Box -->
-        <div class="search-area">
-            <input type="text" class="search" placeholder="   Search..." label="Search" id="searchInput">
-            <div class="for-search-btn">
-                <button class="btn" type="button" id="searchButton">Search</button>
-            </div>
-        </div>
+
         <!-- Card Layout -->
         <div class="row" id="pokemonCards">
             <div class="col-1">
@@ -52,9 +56,13 @@
                 </div>
             </div>
         </div>
+
         <div id="notFoundMessage" style="display: none; font-weight: bold; font-size: 1.2em;"><b>Sorry, not found</b></div>
     </div>
 
+    <footer>
+        <p class="hello-footer">POKEMON WORLD</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -96,4 +104,6 @@
 		speed: 400
 	});
     </script>
+
+</body>
 </html>
